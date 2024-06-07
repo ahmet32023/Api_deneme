@@ -1,12 +1,13 @@
-const express = require('express');
-const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient();
-const app = express();
-const port = 3000;
+const express = require('express'); // Express.js paketini dahil ettim
+const { PrismaClient } = require('@prisma/client'); // Prisma Client'ı dahil ettim
+const prisma = new PrismaClient(); // Yeni bir Prisma Client örneği oluşturudum
+const app = express(); // Yeni bir Express.js uygulaması oluşturdum
+const port = 3000; // Uygulamanın çalışacağı portu belirttim. İleride port değişikliği durumlarında buradan kolayca ayarlayabiliriz
 
 app.use(express.json());
 
 // Middleware örneği
+// Bu middleware bütün isteklerde çalışıyor
 app.use((req, res, next) => {
   console.log('Hello World');
   next();
